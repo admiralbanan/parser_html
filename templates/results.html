@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+{% if results %}
+    <ul>
+        {% for news in results %}
+            <li>
+                <a href="{{ news.link }}" target="_blank">{{ news.title }}</a><br>
+                {{ news.description }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Результаты не найдены.</p>
+{% endif %}
+{% endblock %}

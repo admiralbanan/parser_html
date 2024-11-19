@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+{% if news %}
+    <ul>
+        {% for news_item in news %}
+            <li>
+                <h2>{{ news_item.title }}</h2>
+                <p>{{ news_item.description }}</p>
+                <a href="{{ news_item.link }}" target="_blank">Источник</a>
+                <p>Дата: {{ news_item.parsed_date }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Нет новостей.</p>
+{% endif %}
+{% endblock %}
